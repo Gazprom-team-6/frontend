@@ -28,10 +28,10 @@ export function PageLayout() {
       <Loader />
     );
   }
-
+//нет меню
   return (
     <div className="layout">
-      <Menu />
+      {/* <Menu /> */}
       <Header />
       <div className="content">
         <Outlet />

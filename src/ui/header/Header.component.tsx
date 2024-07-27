@@ -1,5 +1,4 @@
 import { Account } from './components';
-import logo from '@/assets/icon.jpg';
 
 import { Logo } from '@/ui';
 
@@ -11,12 +10,7 @@ import './Header.style.css';
 export function Header() {
   return (
     <div className="header">
-      {/* <Logo /> */}
-      <img
-        src={logo}
-        alt="Логотип"
-        width="80px"
-      />
+      <Logo />
       <div className="header-details">
         <Account />
       </div>
