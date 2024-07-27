@@ -1,0 +1,12 @@
+.auth {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 24px;
+  justify-content: center;
+}
+
+.auth-text {
+  text-align: center;
+}

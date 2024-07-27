@@ -1,0 +1,25 @@
+{
+  "short_name": "PaaS",
+  "name": "GID PaaS Project",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "16x16",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#135",
+  "background_color": "#fff"
+}

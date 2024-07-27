@@ -1,0 +1,20 @@
+.not-found {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.not-found-title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 0;
+}
+
+.not-found-text {
+  margin: 0;
+}
