@@ -1,0 +1,81 @@
+:root {
+  --app-active-color: #1677ff;
+  --app-background-color: #31333c;
+  --app-logo-color: #626c80;
+  --app-shadow-color: rgba(5, 5, 5, .06);
+  --app-text-color: #abb0c4;
+  --card-background-color: #626c80;
+  --card-border-color: #626c80;
+  --card-description-color: #abb0c4;
+  --card-shadow-color: rgba(255, 255, 255, .25);
+  --card-text-color: #fff;
+  --header-background-color: var(--app-background-color);
+  --header-border-color: #444b5b;
+  --menu-background-color: #444b5b;
+  --menu-border-color: var(--app-shadow-color);
+  --menu-item-background-color: transparent;
+  --menu-item-color: var(--app-text-color);
+  --menu-item-current-background-color: #e6f4ff;
+  --menu-item-current-color: var(--app-active-color);
+  --menu-item-hover-background-color: var(--app-shadow-color);
+  --steps-border-color: rgba(0, 0, 0, .06);
+  --steps-indicator-color: rgba(0, 0, 0, .25);
+  background-color: var(--app-background-color);
+  color: var(--app-text-color);
+  color-scheme: light dark;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+  font-weight: 400;
+  line-height: 1.5;
+  text-rendering: optimizelegibility;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  min-width: 320px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --app-background-color: #f2f5f9;
+    --app-logo-color: #626c80;
+    --app-shadow-color: rgba(5, 5, 5, .06);
+    --app-text-color: rgba(0, 0, 0, .88);
+    --card-background-color: #fff;
+    --card-border-color: #f0f0f0;
+    --card-description-color: rgba(0, 0, 0, .45);
+    --card-shadow-color: rgba(0, 0, 0, .25);
+    --card-text-color: rgba(0, 0, 0, .88);
+    --header-border-color: var(--app-shadow-color);
+    --menu-background-color: var(--app-background-color);
+    --menu-border-color: var(--app-shadow-color);
+  }
+}
+
+/* stylelint-disable-next-line selector-max-id */
+#root {
+  background-color: var(--app-background-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}

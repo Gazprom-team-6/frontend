@@ -1,0 +1,69 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "@stylistic/stylelint-config"
+  ],
+  "reportInvalidScopeDisables": true,
+  "reportNeedlessDisables": true,
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "alpha-value-notation": "number",
+    "at-rule-empty-line-before": "always",
+    "color-function-notation": [
+      "legacy",
+      {
+        "ignore": [
+          "with-var-inside"
+        ]
+      }
+    ],
+    "color-named": "never",
+    "custom-property-empty-line-before": null,
+    "custom-property-pattern": null,
+    "declaration-block-no-redundant-longhand-properties": true,
+    "declaration-empty-line-before": "never",
+    "declaration-no-important": true,
+    "font-weight-notation": "numeric",
+    "media-feature-range-notation": "context",
+    "media-query-no-invalid": true,
+    "no-descending-specificity": true,
+    "order/properties-alphabetical-order": true,
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "ignore": [
+          "after-comment",
+          "first-nested"
+        ]
+      }
+    ],
+    "selector-max-attribute": 2,
+    "selector-max-class": 4,
+    "selector-max-combinators": 4,
+    "selector-max-compound-selectors": 4,
+    "selector-max-id": 0,
+    "selector-max-specificity": null,
+    "selector-max-type": 2,
+    "selector-max-universal": 1,
+    "selector-no-qualifying-type": true,
+    "selector-not-notation": "complex",
+    "@stylistic/at-rule-name-space-after": "always",
+    "@stylistic/at-rule-semicolon-space-before": "never",
+    "@stylistic/block-closing-brace-empty-line-before": null,
+    "@stylistic/block-closing-brace-newline-after": null,
+    "@stylistic/block-opening-brace-space-before": null,
+    "@stylistic/declaration-block-semicolon-newline-before": "never-multi-line",
+    "@stylistic/max-empty-lines": 2,
+    "@stylistic/max-line-length": null,
+    "@stylistic/number-leading-zero": "never",
+    "@stylistic/selector-list-comma-newline-before": "never-multi-line",
+    "@stylistic/selector-list-comma-space-after": "always-single-line",
+    "@stylistic/selector-list-comma-space-before": "never-single-line",
+    "@stylistic/unicode-bom": "never",
+    "@stylistic/value-list-comma-newline-after": "never-multi-line",
+    "@stylistic/value-list-comma-newline-before": "never-multi-line",
+    "@stylistic/value-list-comma-space-after": "always"
+  }
+}

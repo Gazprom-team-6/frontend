@@ -1,0 +1,12 @@
+# Folders
+node_modules/
+coverage/
+dist/
+logs/
+.vscode/
+.idea/
+.DS_Store
+
+# Files
+*.local
+*.log*
