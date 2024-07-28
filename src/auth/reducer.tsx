@@ -5,7 +5,8 @@ export function reducer(state: AuthState, action: Action): AuthState {
     case 'INITIALISED':
       return {
         ...state,
-        isAuthenticated: !!action.user,
+        // isAuthenticated: !!action.user,
+        isAuthenticated: false,
         isLoading: false,
         error: undefined,
         user: action.user,

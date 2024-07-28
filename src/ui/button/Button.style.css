@@ -1,16 +1,17 @@
 .button {
   appearance: none;
-  background-color: #3174f6;
-  border: 1px solid #3174f6;
+  background-color: #1677ff;
+  border: 1px solid #1677ff;
   border-radius: 8px;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   display: block;
   font-family: inherit;
-  font-size: 14px;
-  line-height: 22px;
-  padding: 4px 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 8px 0;
   transition-duration: .15s;
   transition-property: background-color, border-color, color;
   transition-timing-function: ease-in-out;
