@@ -54,7 +54,7 @@ export function Auth() {
               <div className="form__text-error">Введите пароль</div>
               <div className="form__password-block">
                 <label className="form__check">
-                  <input className="form__checkbox-hide" type="checkbox" name="" id="check" />
+                  <input className="form__checkbox-hide" type="checkbox" name="" id="check" checked/>
                   <span className="form__checkbox"></span>
                   Запомнить пароль
                 </label>

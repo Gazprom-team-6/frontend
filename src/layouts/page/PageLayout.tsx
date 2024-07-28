@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 import { useAuth } from '@/auth';
-import { Header, Loader, Menu } from '@/ui';
+import { Header, Loader } from '@/ui';
 
 import './PageLayout.style.css';
 
