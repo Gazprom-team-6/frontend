@@ -28,7 +28,8 @@ export function PageLayout() {
       <Loader />
     );
   }
-//нет меню
+  // нет меню
+
   return (
     <div className="layout">
       {/* <Menu /> */}

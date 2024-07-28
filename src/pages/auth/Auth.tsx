@@ -17,7 +17,7 @@ export function Auth() {
   const { isAuthenticated, login } = useAuth();
 
   React.useEffect(() => {
-    console.log(isAuthenticated)
+    console.log(isAuthenticated);
     if (isAuthenticated) {
       navigate('/', { replace: true });
     }
@@ -35,8 +35,8 @@ export function Auth() {
                 placeholder="e-mail"
                 // value={email}
                 // onChange={e => setEmail(e.target.value)}
-                required
                 className="form__input"
+                required
               />
               <div className="form__text-error">Укажите, пожалуйста, ваш email корректно</div>
             </div>
@@ -46,17 +46,23 @@ export function Auth() {
                 placeholder="пароль"
                 // value={password}
                 // onChange={e => setPassword(e.target.value)}
-                required
                 className="form__input"
+                required
               />
-              <button className="form__input-control" type="button" title="Показать пароль"
-                aria-label="Показать пароль"></button>
+              <button
+                className="form__input-control"
+                type="button"
+                title="Показать пароль"
+                aria-label="Показать пароль"
+              />
               <div className="form__text-error">Введите пароль</div>
               <div className="form__password-block">
                 <label className="form__check">
-                  <input className="form__checkbox-hide" type="checkbox" name="" id="check" checked/>
-                  <span className="form__checkbox"></span>
-                  Запомнить пароль
+                  <input
+                    className="form__checkbox-hide"
+                    type="checkbox"
+                    name="" id="check" checked
+                  /><span className="form__checkbox" />Запомнить пароль
                 </label>
                 <Link to="/auth" className="form__link">Забыли пароль?</Link>
               </div>
@@ -65,18 +71,22 @@ export function Auth() {
           <Button
             type="primary"
             onClick={login}
-            >
+          >
             Войти
           </Button>
-          </form>
+        </form>
+      </div>
+      <div className="copyright">
+        <img
+          className="copyright__logo"
+          src={logo}
+          alt="логотип"
+        />
+        <div className="copyright__block">
+          <div className="copyright__icon" />
+          <p className="copyright__text">2022–2024 OOO «Оператор Газпром ИД»</p>
         </div>
-        <div className="copyright">
-          <img className="copyright__logo" src={logo} alt="логотип"/>
-          <div className="copyright__block">
-            <div className="copyright__icon"></div>
-            <p className="copyright__text">2022–2024 OOO «Оператор Газпром ИД»</p>
-          </div>
-        </div>
+      </div>
     </div>
   );
 }
