@@ -61,7 +61,9 @@ export function Auth() {
                   <input
                     className="form__checkbox-hide"
                     type="checkbox"
-                    name="" id="check" checked
+                    name=""
+                    id="check"
+                    checked
                   /><span className="form__checkbox" />Запомнить пароль
                 </label>
                 <Link to="/auth" className="form__link">Забыли пароль?</Link>
