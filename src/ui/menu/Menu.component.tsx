@@ -1,11 +1,11 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'
 
-import { items } from './Menu.constants';
-import { isCurrentPage } from './Menu.utils';
+import { items } from './Menu.constants'
+import { isCurrentPage } from './Menu.utils'
 
-import './Menu.style.css';
+import './Menu.style.css'
 
 /**
  * Отображает главное меню приложения.

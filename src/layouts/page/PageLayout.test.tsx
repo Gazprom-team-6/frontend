@@ -1,8 +1,8 @@
-import { render } from '@testing-library/react';
+import { render } from '@testing-library/react'
 
-import * as auth from '@/auth';
-import { PageLayout } from '@/layouts';
-import { Wrapper } from '@/tests';
+import * as auth from '@/auth'
+import { PageLayout } from '@/layouts'
+import { Wrapper } from '@/tests'
 
 describe('PageLayout', () => {
   it('отображает компонент PageLayout', () => {
@@ -14,12 +14,12 @@ describe('PageLayout', () => {
       login: vi.fn(),
       exchange: vi.fn(),
       logout: vi.fn(),
-    }));
-    const { container } = render(<PageLayout />, { wrapper: Wrapper });
-    const layout = container.querySelector('.layout');
+    }))
+    const { container } = render(<PageLayout />, { wrapper: Wrapper })
+    const layout = container.querySelector('.layout')
 
-    expect(layout).toBeInTheDocument();
-  });
+    expect(layout).toBeInTheDocument()
+  })
 
   it('отображает состояние загрузки компонента PageLayout', () => {
     vi.spyOn(auth, 'useAuth').mockImplementation(() => ({
@@ -30,12 +30,12 @@ describe('PageLayout', () => {
       login: vi.fn(),
       exchange: vi.fn(),
       logout: vi.fn(),
-    }));
-    render(<PageLayout />, { wrapper: Wrapper });
-    const loader = document.querySelector('.loader');
+    }))
+    render(<PageLayout />, { wrapper: Wrapper })
+    const loader = document.querySelector('.loader')
 
-    expect(loader).toBeInTheDocument();
-  });
+    expect(loader).toBeInTheDocument()
+  })
 
   it('перенаправляет на страницу /auth, если пользователь не авторизован', () => {
     vi.spyOn(auth, 'useAuth').mockImplementation(() => ({
@@ -46,11 +46,11 @@ describe('PageLayout', () => {
       login: vi.fn(),
       exchange: vi.fn(),
       logout: vi.fn(),
-    }));
-    render(<PageLayout />, { wrapper: Wrapper });
+    }))
+    render(<PageLayout />, { wrapper: Wrapper })
 
     setTimeout(() => {
-      expect(window.location.pathname).toBe('/auth');
-    }, 400);
-  });
-});
+      expect(window.location.pathname).toBe('/auth')
+    }, 400)
+  })
+})

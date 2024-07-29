@@ -1,15 +1,15 @@
-import * as React from 'react';
+import * as React from 'react'
 
-export type PageProps = {
-  /** Заголовок страницы */
-  title: string;
+export type pageprops = {
+  /** Содержимое страницы */
+  children: react.reactnode;
 
   /** Дополнительная область в правом верхнем углу страницы */
-  extra?: React.ReactNode;
-
-  /** Содержимое страницы */
-  children: React.ReactNode;
+  extra?: react.reactnode;
 
   /** Вложенная страница */
   inner?: boolean;
-};
+
+  /** Заголовок страницы */
+  title: string;
+}

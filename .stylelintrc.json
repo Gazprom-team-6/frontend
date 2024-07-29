@@ -9,6 +9,7 @@
     "stylelint-order"
   ],
   "rules": {
+    "selector-class-pattern": "^[a-zA-Z0-9-_]+$",
     "alpha-value-notation": "number",
     "at-rule-empty-line-before": "always",
     "color-function-notation": [

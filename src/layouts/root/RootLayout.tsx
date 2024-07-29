@@ -1,6 +1,6 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom'
 
-import { AuthProvider } from '@/auth';
+import { AuthProvider } from '@/auth'
 
 /**
  * Компонент RootLayout обеспечивает доступ к методам и состоянию

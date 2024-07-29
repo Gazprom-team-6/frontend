@@ -1,1 +1,1 @@
-export { Menu } from './Menu.component';
+export { Menu } from './Menu.component'

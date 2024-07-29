@@ -1,4 +1,4 @@
-import { useAuth } from '@/auth';
+import { useAuth } from '@/auth'
 import { Page } from '@/ui';
 
 export function Account() {

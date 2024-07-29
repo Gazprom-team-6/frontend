@@ -1,52 +1,52 @@
-import * as React from 'react';
+import * as React from 'react'
 
-export type User = {
+export type user = {
+  /** Электронная почта */
+  email: string;
+
+  /** Полное имя пользователя */
+  fullname: string;
+
   /** Идентификатор пользователя */
   id: number;
 
   /** Логин пользователя */
   username: string;
+}
 
-  /** Полное имя пользователя */
-  fullname: string;
+export type authstate = {
+  /** Сообщение об ошибке авторизации */
+  error?: error;
 
-  /** Электронная почта */
-  email: string;
-};
-
-export type AuthState = {
   /** Состояние авторизации */
-  isAuthenticated: boolean;
+  isauthenticated: boolean;
 
   /** Состояние загрузки */
-  isLoading: boolean;
-
-  /** Сообщение об ошибке авторизации */
-  error?: Error;
+  isloading: boolean;
 
   /** Данные пользователя */
-  user?: User;
-};
+  user?: user;
+}
 
-export type AuthContextType = {
+export type authcontexttype = {
   /** Запрашивает код авторизации */
   login: () => void;
 
   /** Очищает сессию авторизации приложения */
   logout: () => void;
-} & AuthState;
+} & AuthState
 
-export type AuthProviderProps = {
+export type authproviderprops = {
   /** Дочерние компоненты */
-  children: React.ReactNode;
+  children: react.reactnode;
 
   /** Контекст авторизации */
-  context?: React.Context<AuthContextType>;
-};
+  context?: react.context<authcontexttype>;
+}
 
-export type Action =
-  | { type: 'INITIALISED'; user?: User }
-  | { type: 'LOGIN_STARTED' }
-  | { type: 'LOGIN_COMPLETE' }
-  | { type: 'LOGOUT' }
-  | { type: 'ERROR'; error: Error };
+export type action =
+| { type: "INITIALISED"; user?: user; }
+| { type: "LOGIN_STARTED"; }
+| { type: "LOGIN_COMPLETE"; }
+| { type: "LOGOUT"; }
+| { error: error; type: "ERROR"; }

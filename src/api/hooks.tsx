@@ -1,7 +1,7 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query'
 
-import { api } from '@/api';
-import type { GetProjectList } from '@/api';
+import { api } from '@/api'
+import type { GetProjectList } from '@/api'
 
 /**
  * Хук API, для получения списка проектов.

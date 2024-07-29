@@ -1,8 +1,8 @@
-import { links } from './constants';
+import { links } from './constants'
 
-import { Card, Page } from '@/ui';
+import { Card, Page } from '@/ui'
 
-import './Project.style.css';
+import './Project.style.css'
 
 /**
  * Компонент Project отображает стартовую страницу приложения.

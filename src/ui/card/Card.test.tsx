@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react'
 
-import { Wrapper } from '@/tests';
-import { Card } from '@/ui';
+import { Wrapper } from '@/tests'
+import { Card } from '@/ui'
 
 describe('Card', () => {
   it('отображает компонент Card', () => {
@@ -12,13 +12,13 @@ describe('Card', () => {
         description="Test Description"
       />,
       { wrapper: Wrapper },
-    );
-    const title = screen.getByText('Test Title');
-    const description = screen.getByText('Test Description');
+    )
+    const title = screen.getByText('Test Title')
+    const description = screen.getByText('Test Description')
 
-    expect(title).toBeInTheDocument();
-    expect(description).toBeInTheDocument();
-  });
+    expect(title).toBeInTheDocument()
+    expect(description).toBeInTheDocument()
+  })
 
   it('отображает компонент Card с дополнительным содержимым', () => {
     render(
@@ -31,17 +31,17 @@ describe('Card', () => {
         footerExtra="Test Footer Extra"
       />,
       { wrapper: Wrapper },
-    );
-    const title = screen.getByText('Test Title');
-    const description = screen.getByText('Test Description');
-    const footer = screen.getByText('Test Footer');
-    const headerExtra = screen.getByText('Test Header Extra');
-    const footerExtra = screen.getByText('Test Footer Extra');
+    )
+    const title = screen.getByText('Test Title')
+    const description = screen.getByText('Test Description')
+    const footer = screen.getByText('Test Footer')
+    const headerExtra = screen.getByText('Test Header Extra')
+    const footerExtra = screen.getByText('Test Footer Extra')
 
-    expect(title).toBeInTheDocument();
-    expect(description).toBeInTheDocument();
-    expect(footer).toBeInTheDocument();
-    expect(headerExtra).toBeInTheDocument();
-    expect(footerExtra).toBeInTheDocument();
-  });
-});
+    expect(title).toBeInTheDocument()
+    expect(description).toBeInTheDocument()
+    expect(footer).toBeInTheDocument()
+    expect(headerExtra).toBeInTheDocument()
+    expect(footerExtra).toBeInTheDocument()
+  })
+})

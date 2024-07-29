@@ -1,21 +1,21 @@
-import type * as React from 'react';
+import type * as React from 'react'
 
-export type CardProps = {
-  /** URL адрес карточки. */
-  url: string;
-
-  /** Заголовок карточки. */
-  title: string | React.ReactNode;
-
+export type cardprops = {
   /** Описание карточки. */
-  description?: string | React.ReactNode;
+  description?: string | react.reactnode;
 
   /** Нижняя часть карточки. */
-  footer?: string | React.ReactNode;
-
-  /** Дополнительное содержимое верхней части карточки. */
-  headerExtra?: React.ReactNode;
+  footer?: string | react.reactnode;
 
   /** Дополнительное содержимое нижней части карточки. */
-  footerExtra?: React.ReactNode;
-};
+  footerextra?: react.reactnode;
+
+  /** Дополнительное содержимое верхней части карточки. */
+  headerextra?: react.reactnode;
+
+  /** Заголовок карточки. */
+  title: string | react.reactnode;
+
+  /** URL адрес карточки. */
+  url: string;
+}
