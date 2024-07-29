@@ -1,11 +1,11 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom';
 
-import { useAuth } from '@/auth'
-import { Header, Loader } from '@/ui'
+import { useAuth } from '@/auth';
+import { Header, Loader } from '@/ui';
 
-import './PageLayout.style.css'
+import './PageLayout.style.css';
 
 /**
  * Компонент PageLayout отображает страницы приложения,
@@ -14,7 +14,7 @@ import './PageLayout.style.css'
  * Элемент Outlet отображает дочерние элементы маршрута.
  */
 export function PageLayout() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { isAuthenticated, isLoading } = useAuth();
 
   React.useEffect(() => {

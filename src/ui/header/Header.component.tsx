@@ -1,8 +1,8 @@
-import { Account } from './components'
+import { Account } from './components';
 
-import { Logo } from '@/ui'
+import { Logo } from '@/ui';
 
-import './Header.style.css'
+import './Header.style.css';
 
 /**
  * Отображает заголовок приложения в виде логотипа.

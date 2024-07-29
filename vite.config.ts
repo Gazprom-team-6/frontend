@@ -8,7 +8,7 @@ export default defineConfig(() => ({
     react(),
     svgr(),
   ],
-  base: '/frontend/',
+  base: 'frontend',
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),

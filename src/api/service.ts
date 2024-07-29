@@ -1,6 +1,6 @@
-export const apiurl = `${import.meta.env.VITE_API}/api/v1`
+export const apiUrl = `${import.meta.env.VITE_API}/api/v1`;
 
-class apiservice {
+class ApiService {
   private readonly token: string | null = null;
 
   constructor() {
@@ -14,7 +14,7 @@ class apiservice {
    * @param url - URL адрес.
    */
   public async get<T>(url: string): Promise<T> {
-    return this.request<T>(url, { method: 'GET' })
+    return this.request<T>(url, { method: 'GET' });
   }
 
   /**
@@ -24,15 +24,13 @@ class apiservice {
    * @param url - URL адрес.
    * @param data - Данные для отправки.
    */
-  public async post<T,
- D>(url: string,
- data: D): Promise<T> {
-    const body = JSON.stringify(data)
+  public async post<T, D>(url: string, data: D): Promise<T> {
+    const body = JSON.stringify(data);
 
     return this.request<T>(url, {
       method: 'POST',
       body
-    })
+    });
   }
 
   /**
@@ -42,15 +40,13 @@ class apiservice {
    * @param url - URL адрес.
    * @param data - Данные для отправки.
    */
-  public async put<T,
- D>(url: string,
- data: D): Promise<T> {
-    const body = JSON.stringify(data)
+  public async put<T, D>(url: string, data: D): Promise<T> {
+    const body = JSON.stringify(data);
 
     return this.request<T>(url, {
       method: 'PUT',
       body
-    })
+    });
   }
 
   /**
@@ -60,15 +56,13 @@ class apiservice {
    * @param url - URL адрес.
    * @param data - Данные для отправки.
    */
-  public async patch<T,
- D>(url: string,
- data: D): Promise<T> {
-    const body = JSON.stringify(data)
+  public async patch<T, D>(url: string, data: D): Promise<T> {
+    const body = JSON.stringify(data);
 
     return this.request<T>(url, {
       method: 'PATCH',
       body
-    })
+    });
   }
 
   /**
@@ -78,18 +72,17 @@ class apiservice {
    * @param url - URL адрес.
    */
   public async delete<T>(url: string): Promise<T> {
-    return this.request<T>(url, { method: 'DELETE' })
+    return this.request<T>(url, { method: 'DELETE' });
   }
 
-  private async request<T>(url: string,
- options: RequestInit): Promise<T> {
-    const token = this.token ?? window.localStorage.getItem('token')
+  private async request<T>(url: string, options: RequestInit): Promise<T> {
+    const token = this.token ?? window.localStorage.getItem('token');
 
     options.headers = {
       ...options.headers,
-      ...token ? { authorization: token; } : {},
-      'Content-Type': "application/json",;
-    }
+      ...token ? { Authorization: token } : {},
+      'Content-Type': 'application/json',
+    };
 
     const response = await fetch(`${apiUrl}${url}`, options);
     const json = await response.json();
@@ -98,8 +91,8 @@ class apiservice {
       throw new Error(response.statusText);
     }
 
-    return json as T
+    return json as T;
   }
 }
 
-export const api = new ApiService()
+export const api = new ApiService();

@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import type { CardProps } from './Card.types'
+import type { CardProps } from './Card.types';
 
-import './Card.style.css'
+import './Card.style.css';
 
 /**
  * Отображает ссылку в виде карточки с заголовком и описанием.
@@ -15,12 +15,12 @@ import './Card.style.css'
  * @param footerExtra - Дополнительное содержимое нижней части карточки.
  */
 export function Card({
-url,
-title,
-description,
-footer,
-headerExtra,
-footerExtra,
+  url,
+  title,
+  description,
+  footer,
+  headerExtra,
+  footerExtra,
 }: CardProps) {
   return (
     <div className="card">
@@ -55,5 +55,5 @@ footerExtra,
         </span>
       )}
     </div>
-  )
+  );
 }

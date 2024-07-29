@@ -1,13 +1,13 @@
-export type buttonprops = {
-  /** Содержимое, отображаемое внутри кнопки. */
-  children: react.reactnode;
+export type ButtonProps = {
+  /** Тип кнопки, по-умолчанию 'secondary'. */
+  type?: 'primary' | 'secondary' | 'danger';
+
+  /** Функция, вызываемая при клике на кнопку. */
+  onClick?: () => void;
 
   /** Отключает кнопку. */
   disabled?: boolean;
 
-  /** Функция, вызываемая при клике на кнопку. */
-  onclick?: () => void;
-
-  /** Тип кнопки, по-умолчанию 'secondary'. */
-  type?: "primary" | "secondary" | "danger";
-}
+  /** Содержимое, отображаемое внутри кнопки. */
+  children: React.ReactNode;
+};

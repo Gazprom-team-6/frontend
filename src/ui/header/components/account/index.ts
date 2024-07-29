@@ -1,1 +1,1 @@
-export { Account } from './Account.component'
+export { Account } from './Account.component';

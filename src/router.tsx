@@ -1,10 +1,10 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom';
 
 import {
   AuthLayout,
   PageLayout,
   RootLayout,
-} from './layouts'
+} from './layouts';
 
 import {
   Account,
@@ -13,7 +13,7 @@ import {
   Project,
   Services,
   Settings,
-} from './pages'
+} from './pages';
 
 export const router = createBrowserRouter([
   {
@@ -61,4 +61,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-])
+]);

@@ -1,7 +1,7 @@
-import { http, HttpResponse } from 'msw'
-import { setupServer } from 'msw/node'
-import { apiUrl } from '@/api'
-import { data } from '@/tests'
+import { http, HttpResponse } from 'msw';
+import { setupServer } from 'msw/node';
+import { apiUrl } from '@/api';
+import { data } from '@/tests';
 
 export const server = setupServer(
   http.get(
@@ -20,16 +20,16 @@ export const server = setupServer(
     `${apiUrl}/projects`,
     () => HttpResponse.json(data.projectList)
   ),
-)
+);
 
 beforeAll(() => {
-  server.listen()
-})
+  server.listen();
+});
 
 afterEach(() => {
-  server.resetHandlers()
-})
+  server.resetHandlers();
+});
 
 afterAll(() => {
-  server.close()
-})
+  server.close();
+});
