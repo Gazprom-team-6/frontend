@@ -1,21 +1,21 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 
-import { Button } from '@/ui';
+import { Button } from '@/ui'
 
-import './NotFound.style.css';
+import './NotFound.style.css'
 
 /**
  * Компонент NotFound отображает страницу ошибки маршрутизации.
  * Переходит на страницу авторизации по истечении времени обратного отсчета.
  */
 export function NotFound() {
-  const [count, setCount] = React.useState(20);
-  const navigate = useNavigate();
-  const handleNavigate = () => {
-    navigate('/auth', { replace: true });
-  };
+  const [count, setCount] = React.useState(20)
+  const navigate = useNavigate()
+  const handlenavigate = () => {
+    navigate('/auth', { replace: true })
+  }
 
   React.useEffect(() => {
     const interval = window.setInterval(() => {

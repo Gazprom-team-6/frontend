@@ -1,11 +1,11 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 
-import { AuthContext } from './authContext';
-import { initialAuthState } from './authState';
-import { reducer } from './reducer';
-import type { AuthContextType, AuthProviderProps } from './types';
+import { AuthContext } from './authContext'
+import { initialAuthState } from './authState'
+import { reducer } from './reducer'
+import type { AuthContextType, AuthProviderProps } from './types'
 
 /**
  * Предоставляет состояние и методы контекста авторизации дочерним компонентам.
@@ -15,11 +15,11 @@ import type { AuthContextType, AuthProviderProps } from './types';
  * @param children — Содержит дочерние компоненты.
  */
 export function AuthProvider({
-  children,
-  context = AuthContext,
+children,
+context = AuthContext,
 }: AuthProviderProps) {
-  const [state, dispatch] = React.useReducer(reducer, initialAuthState);
-  const navigate = useNavigate();
+  const [state, dispatch] = React.useReducer(reducer, initialAuthState)
+  const navigate = useNavigate()
 
   const initialize = React.useCallback(async (): Promise<void> => {
     dispatch({
@@ -30,38 +30,38 @@ export function AuthProvider({
         email: 'user@example.com',
         fullname: 'Пользователь',
       },
-    });
-  }, []);
+    })
+  }, [])
 
   const login = React.useCallback((): void => {
-    dispatch({ type: 'LOGIN_COMPLETE' });
-  }, []);
+    dispatch({ type: 'LOGIN_COMPLETE' })
+  }, [])
 
   const logout = React.useCallback(() => {
-    window.localStorage.removeItem('token');
-    dispatch({ type: 'LOGOUT' });
-    navigate('/auth', { replace: true });
-  }, [navigate]);
+    window.localStorage.removeItem('token')
+    dispatch({ type: 'LOGOUT' })
+    navigate('/auth', { replace: true })
+  }, [navigate])
 
   React.useEffect(() => {
-    initialize();
-  }, [initialize]);
+    initialize()
+  }, [initialize])
 
   const contextValue = React.useMemo<AuthContextType>(() => {
     return {
       ...state,
       login,
       logout,
-    };
+    }
   }, [
     state,
     login,
     logout,
-  ]);
+  ])
 
   return (
     <context.Provider value={contextValue}>
       {children}
     </context.Provider>
-  );
+  )
 }

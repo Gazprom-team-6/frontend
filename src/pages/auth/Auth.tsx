@@ -1,20 +1,20 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'
 
-import { useAuth } from '@/auth';
-import { Button } from '@/ui';
-import logo from '@/assets/logo.svg';
+import { useAuth } from '@/auth'
+import { Button } from '@/ui'
+import logo from '@/assets/logo.svg'
 
-import './Auth.style.css';
+import './Auth.style.css'
 
 /**
  * Компонент Auth отображает страницу аутентификации.
  * Начальная точка входа пользователя в приложение.
  */
 export function Auth() {
-  const navigate = useNavigate();
-  const { isAuthenticated, login } = useAuth();
+  const navigate = useNavigate()
+  const { isAuthenticated, login }
 
   React.useEffect(() => {
     console.log(isAuthenticated);

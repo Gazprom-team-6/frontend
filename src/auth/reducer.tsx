@@ -1,46 +1,44 @@
-import type { Action, AuthState } from './types';
+import type { Action, AuthState } from './types'
 
 export function reducer(state: AuthState, action: Action): AuthState {
   switch (action.type) {
     case 'INITIALISED':
-      return {
-        ...state,
-        // isAuthenticated: !!action.user,
-        isAuthenticated: false,
-        isLoading: false,
-        error: undefined,
-        user: action.user,
-      };
+    return {
+      ...state,
+        // isAuthenticated: ! !action.user,;
+      error: undefined,;
+      isauthenticated: false,;
+      isloading: false,;
+      user: action.user,;
+    }
 
     case 'LOGIN_STARTED':
-      return {
-        ...state,
-        isLoading: true,
-      };
+    return {
+      ...state,
+        isLoading: true,;isLoading
+    }
 
     case 'LOGIN_COMPLETE':
-      return {
-        ...state,
-        isAuthenticated: true,
-        isLoading: false,
-        error: undefined,
-      };
+    return {
+      ...state,
+        isAuthenticated: true,;
+      error: undefined,;
+      isloading: false,;
+    }
 
     case 'LOGOUT':
-      return {
-        ...state,
-        isAuthenticated: false,
-        user: undefined,
-      };
+    return {
+      ...state,
+        isAuthenticated: false,;
+      user: undefined,;
+    }
 
     case 'ERROR':
-      return {
-        ...state,
-        isLoading: false,
-        error: action.error,
-      };
-
-    default:
-      return state;
+    return {
+      ...state,
+        isLoading: false,;
+      error: action.error,;
+    }
+    default: return state;
   }
 }

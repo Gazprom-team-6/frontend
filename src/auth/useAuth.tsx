@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import { AuthContext } from './authContext';
-import type { AuthContextType } from './types';
+import { AuthContext } from './authContext'
+import type { AuthContextType } from './types'
 
 /**
  * ```js
@@ -21,5 +21,5 @@ import type { AuthContextType } from './types';
  * для получения состояния и методов системы аутентификации.
  */
 export function useAuth(context = AuthContext): AuthContextType {
-  return React.useContext<AuthContextType>(context);
+  return React.useContext<AuthContextType>(context)
 }

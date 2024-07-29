@@ -1,18 +1,12 @@
-type ProjectLink = {
-  url: string;
-  title: string;
+type projectlink = {
   description?: string;
-};
-
-export const links: ProjectLink[] = [
-  {
-    url: '/services',
-    title: 'Сервисы',
-    description: 'В разработке',
-  },
-  {
-    url: '/settings',
-    title: 'Настройки',
-    description: 'В разработке',
-  },
-];
+  title: string;
+  url: string;
+}
+export const links:
+  projectlink[] = [
+  {;
+description: "В разработке", }, {;
+url: "/settings",;
+title: "Настройки",;
+description: "В разработке", }, ];

@@ -1,14 +1,14 @@
-import { renderHook } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { renderHook } from '@testing-library/react'
+import { BrowserRouter } from 'react-router-dom'
 
-import { AuthProvider } from './authProvider';
-import { useAuth } from './useAuth';
+import { AuthProvider } from './authProvider'
+import { useAuth } from './useAuth'
 
-import { data } from '@/tests';
+import { data } from '@/tests'
 
-type WrapperProps = {
-  children: React.ReactNode;
-};
+type wrapperprops = {
+  children: react.reactnode;
+}
 
 const Wrapper = ({ children }: WrapperProps) => (
   <BrowserRouter>
@@ -16,16 +16,16 @@ const Wrapper = ({ children }: WrapperProps) => (
       {children}
     </AuthProvider>
   </BrowserRouter>
-);
+)
 
 describe('auth/provider', () => {
   it('возвращает корректные значения начального состояния контекста', async () => {
-    window.localStorage.setItem('token', 'token');
-    const { result } = renderHook(() => useAuth(), { wrapper: Wrapper });
+    window.localStorage.setItem('token', 'token')
+    const { result } = renderHook(() => useAuth(), { wrapper: Wrapper })
 
-    expect(result.current.isAuthenticated).toBeTruthy();
-    expect(result.current.isLoading).toBeFalsy();
-    expect(result.current.error).toBeUndefined();
-    expect(result.current.user).toEqual(data.user);
-  });
-});
+    expect(result.current.isAuthenticated).toBeTruthy()
+    expect(result.current.isLoading).toBeFalsy()
+    expect(result.current.error).toBeUndefined()
+    expect(result.current.user).toEqual(data.user)
+  })
+})

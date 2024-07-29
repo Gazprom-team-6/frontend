@@ -1,35 +1,35 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { BrowserRouter, useRoutes } from 'react-router-dom';
-import type { RouteObject } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { BrowserRouter, useRoutes } from 'react-router-dom'
+import type { RouteObject } from 'react-router-dom'
 
-import { AuthProvider } from '@/auth';
-import { AuthContext } from '@/auth/authContext';
-import type { AuthContextType } from '@/auth/types';
+import { AuthProvider } from '@/auth'
+import { AuthContext } from '@/auth/authContext'
+import type { AuthContextType } from '@/auth/types'
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient()
 
-type AppProps = {
+type appprops = {
   /** Дочерние компоненты */
-  children: React.ReactNode;
+  children: react.reactnode;
 
   /** Маршруты для роутера */
-  routes?: RouteObject[];
-};
+  routes?: routeobject[];
+}
 
-type WrapperProps = {
+type wrapperprops = {
   /** Дочерние компоненты */
-  children: React.ReactNode;
+  children: react.reactnode;
 
   /** Контекст авторизации */
-  context?: React.Context<AuthContextType>;
+  context?: react.context<authcontexttype>;
 
   /** Маршруты для роутера */
-  routes?: RouteObject[];
-};
+  routes?: routeobject[];
+}
 
 export function App({
-  children,
-  routes = [],
+children,
+routes = [],
 }: AppProps) {
   return useRoutes([
     {
@@ -37,13 +37,13 @@ export function App({
       element: children,
       children: routes,
     }
-  ]);
+  ])
 }
 
 export function Wrapper({
-  children,
-  context = AuthContext,
-  routes = [],
+children,
+context = AuthContext,
+routes = [],
 }: WrapperProps) {
   return (
     <BrowserRouter>
@@ -55,5 +55,5 @@ export function Wrapper({
         </AuthProvider>
       </QueryClientProvider>
     </BrowserRouter>
-  );
+  )
 }

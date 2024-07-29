@@ -8,6 +8,7 @@ export default [
     plugins: {
       '@stylistic': stylistic,
     },
+    ignores: ['*.test.tsx'],
     languageOptions: {
       parser,
       parserOptions: {
