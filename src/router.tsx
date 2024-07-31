@@ -9,6 +9,8 @@ import {
 import {
   Account,
   Auth,
+  ForgetPassword,
+  ResetPassword,
   NotFound,
   Project,
   Services,
@@ -65,8 +67,19 @@ export const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Auth />,
-            handle: { crumb: 'Авторизация' },
+            element: <ForgetPassword />,
+            handle: { crumb: 'Утерян пароль' },
+          },
+        ],
+      },
+      {
+        path: 'reset-password',
+        element: <AuthLayout />,
+        children: [
+          {
+            index: true,
+            element: <ResetPassword />,
+            handle: { crumb: 'Восстановление пароля' },
           },
         ],
       },
