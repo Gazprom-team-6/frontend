@@ -1,307 +1,307 @@
-export type option = {
-  label: string;
+export type Option = {
   value: string;
-}
+  label: string;
+};
 
-type pagination = {
+type Pagination = {
   page: number;
   per_page: number;
   total_items: number;
   total_pages: number;
-}
+};
 
-type user = {
-  email: string;
+type User = {
   id: number;
-  name: string;
   username: string;
-}
-
-export type getuserlist = {
-  data: user[];
-  error?: string;
-  meta: pagination;
-}
-
-type projectdetail = {
-  id: number;
-  iscodefreeze: boolean;
   name: string;
-  servicescount?: number;
-}
+  email: string;
+};
 
-export type getprojectlist = {
-  data: projectdetail[];
+export type GetUserList = {
+  data: User[];
+  meta: Pagination;
   error?: string;
-  meta: pagination;
-}
+};
 
-export type servicetablefilters = {
-  link?: string;
+type ProjectDetail = {
+  id: number;
+  name: string;
+  isCodeFreeze: boolean;
+  servicesCount?: number;
+};
+
+export type GetProjectList = {
+  data: ProjectDetail[];
+  meta: Pagination;
+  error?: string;
+};
+
+export type ServiceTableFilters = {
   name?: string;
+  tier?: string;
   owner?: string;
   tags?: string;
-  tier?: string;
-}
+  link?: string;
+};
 
-export type servicetablepagination = {
+export type ServiceTablePagination = {
   current?: number;
-  pagesize?: number;
+  pageSize?: number;
   total?: number;
-}
+};
 
-export type postservicelistparams = {
-  filters: servicetablefilters;
-  pagination: servicetablepagination;
-}
+export type PostServiceListParams = {
+  filters: ServiceTableFilters;
+  pagination: ServiceTablePagination;
+};
 
-export type serviceowner = {
+export type ServiceOwner = {
   email: string;
   name: string;
-}
+};
 
-export type serviceshort = {
-  description?: string;
+export type ServiceShort = {
   id: number;
-  iscodefreeze: boolean;
   name: string;
-  projectid: number;
-  repositoryid: number;
+  description?: string;
+  isCodeFreeze: boolean;
+  projectId: number;
+  repositoryId: number;
   tier?: number;
-}
+};
 
-export type postservicelistresponse = {
-  data: serviceshort[];
+export type PostServiceListResponse = {
+  data: ServiceShort[];
+  meta: Pagination;
   error?: string;
-  meta: pagination;
-}
+};
 
-type paginationrequest = {
+type PaginationRequest = {
   page: number;
   per_page: number;
-}
+};
 
-export type configfilter = {
-  configfieldcomparisonoperator: string;
-  configfieldjsonpath: string;
-  configfieldvalue: string;
-  configfieldvaluetype: "string" | "number" | "bool" | "array";
-}
+export type ConfigFilter = {
+  configFieldComparisonOperator: string;
+  configFieldJsonPath: string;
+  configFieldValue: string;
+  configFieldValueType: 'string' | 'number' | 'bool' | 'array';
+};
 
-type filtersrequest = {
-  config?: configfilter[];
+type FiltersRequest = {
   name?: string;
-}
+  config?: ConfigFilter[];
+};
 
-export type postservicelistrequest = {
-  filters?: filtersrequest;
-  pagination: paginationrequest;
-}
+export type PostServiceListRequest = {
+  filters?: FiltersRequest;
+  pagination: PaginationRequest;
+};
 
-type servicelink = {
+type ServiceLink = {
   name: string;
   type: string;
   url: string;
-}
+};
 
-type servicedetail = {
-  'owner-backup'?: serviceowner;
+type ServiceDetail = {
   description?: string;
   engine?: string;
   id?: number;
-  iscodefreeze?: boolean;
-  links?: servicelink[];
+  isCodeFreeze?: boolean;
+  links?: ServiceLink[];
   name?: string;
-  owner?: serviceowner;
-  projectid?: number;
-  repositoryid?: number;
+  owner?: ServiceOwner;
+  'owner-backup'?: ServiceOwner;
+  projectId?: number;
+  repositoryId?: number;
   status?: string;
   tags?: string[];
   tier?: number;
-}
+};
 
-export type getservicedetail = {
-  data: servicedetail;
+export type GetServiceDetail = {
+  data: ServiceDetail;
   error?: string;
-}
+};
 
-export type metriccriterion = {
+export type MetricCriterion = {
   comparator?: string;
-  comparevalue?: string | string[];
-  metricslug?: string;
+  compareValue?: string | string[];
+  metricSlug?: string;
   result?: boolean;
   value?: string | string[] | null;
   weight: number;
-}
+};
 
-type persistentscore = {
-  criteria: metriccriterion[];
+type PersistentScore = {
+  id: string;
+  name: string;
   description: string;
+  criteria: MetricCriterion[];
   entity_id: string;
   entity_type: string;
-  id: string;
-  isadditional?: boolean;
-  name: string;
+  isAdditional?: boolean;
   result?: number;
-}
+};
 
-export type postpersistentscoreresponse = {
-  data: persistentscore;
+export type PostPersistentScoreResponse = {
+  data: PersistentScore;
   error?: string;
-}
+};
 
-export type getpersistentscorelist = {
-  data: persistentscore[];
+export type GetPersistentScoreList = {
+  data: PersistentScore[];
+  meta: Pagination;
   error?: string;
-  meta: pagination;
-}
+};
 
-type datasource = {
+type DataSource = {
   id: number;
   name: string;
-  project_id: number;
   type: string;
-}
+  project_id: number;
+};
 
-export type postdatasourceresponse = {
-  data: datasource;
+export type PostDataSourceResponse = {
+  data: DataSource;
   error?: string;
-}
+};
 
-export type getdatasourcelist = {
-  data: datasource[];
+export type GetDataSourceList = {
+  data: DataSource[];
+  meta: Pagination;
   error?: string;
-  meta: pagination;
-}
+};
 
-export type postdatasourcerequest = {
+export type PostDataSourceRequest = {
   name: string;
-  password: string;
   type: string;
   url: string;
   username: string;
-}
+  password: string;
+};
 
-type persistentscoremetric = {
-  query?: string;
+type PersistentScoreMetric = {
   slug: string;
+  query?: string;
   source_id?: number;
-}
+};
 
-export type persistentscorecriterion = {
+export type PersistentScoreCriterion = {
+  metric: PersistentScoreMetric;
   comparator: string;
-  comparevalue?: string | number | boolean;
-  metric: persistentscoremetric;
+  compareValue?: string | number | boolean;
   weight: number;
-}
+};
 
-export type postpersistentscorerequest = {
-  criteria: persistentscorecriterion[];
+export type PostPersistentScoreRequest = {
+  criteria: PersistentScoreCriterion[];
   description: string;
   name: string;
-}
+};
 
-export type persistentscoredata = {
+export type PersistentScoreData = {
+  manifest: PersistentScoreCriterion[];
+  quality: PersistentScoreCriterion[];
+  sequel: PersistentScoreCriterion[];
   description: string;
-  manifest: persistentscorecriterion[];
   name: string;
-  quality: persistentscorecriterion[];
-  sequel: persistentscorecriterion[];
-}
+};
 
-type codefreezelistitem = {
-  codefreeze: boolean;
-  createdat: string;
-  description: string;
+type CodefreezeListItem = {
   id: string;
+  createdAt: string;
+  updatedAt: string;
   name: string;
-  servicescount: number;
-  updatedat: string;
-}
+  description: string;
+  servicesCount: number;
+  codeFreeze: boolean;
+};
 
-export type getcodefreezelist = {
-  data: codefreezelistitem[];
+export type GetCodefreezeList = {
+  data: CodefreezeListItem[];
+  meta: Pagination;
   error?: string;
-  meta: pagination;
-}
+};
 
-export type codefreezeservice = {
-  code_freeze: boolean;
+export type CodefreezeService = {
   id: number;
   name: string;
+  code_freeze: boolean;
   project_id: number;
-}
+};
 
-type codefreezedetail = {
-  codefreeze: boolean;
-  createdat: string;
-  description: string;
+type CodefreezeDetail = {
   id: string;
+  createdAt: string;
+  updatedAt: string;
   name: string;
-  services: codefreezeservice[];
-  servicescount: number;
-  updatedat: string;
-}
-
-export type getcodefreezedetail = {
-  data: codefreezedetail;
-  error?: string;
-}
-
-export type postcodefreezerequest = {
   description: string;
-  name: string;
-  servicesids: number[];
-}
+  servicesCount: number;
+  codeFreeze: boolean;
+  services: CodefreezeService[];
+};
 
-type template = {
-  templatedesc: string;
-  templategitbranch: string;
-  templategiturl: string;
-  templateid: number;
-  templatename: string;
-}
-
-export type gettemplatelist = {
-  data: template[];
+export type GetCodefreezeDetail = {
+  data: CodefreezeDetail;
   error?: string;
-  meta: pagination;
-}
+};
 
-export type templatequestion = {
-  description: string;
+export type PostCodefreezeRequest = {
   name: string;
-  options?: option[];
-  required: boolean;
+  description: string;
+  servicesIds: number[];
+};
+
+type Template = {
+  templateId: number;
+  templateName: string;
+  templateDesc: string;
+  templateGitUrl: string;
+  templateGitBranch: string;
+};
+
+export type GetTemplateList = {
+  data: Template[];
+  meta: Pagination;
+  error?: string;
+};
+
+export type TemplateQuestion = {
+  type: 'select' | 'input' | 'radio';
+  name: string;
   title: string;
-  type: "select" | "input" | "radio";
-}
+  description: string;
+  required: boolean;
+  options?: Option[];
+};
 
-export type gettemplatedetail = {
+export type GetTemplateDetail = {
   data: {
-    questions: templatequestion[];
     title: string;
+    questions: TemplateQuestion[];
   };
   error?: string;
-}
+};
 
-export type PostTemplateRequest = Template
+export type PostTemplateRequest = Template;
 
-export type posttemplateresponse = {
-  data: template;
+export type PostTemplateResponse = {
+  data: Template;
   error?: string;
-  meta: pagination;
-}
+  meta: Pagination;
+};
 
-export type postscaffoldrequest = {
-  answers: record<string, string>;
+export type PostScaffoldRequest = {
+  projectId: number;
+  repositoryName: string;
+  templateId: number;
   namespace: string;
-  ownerid: number;
-  projectid: number;
-  repositoryname: string;
-  templateid: number;
-}
+  ownerId: number;
+  answers: Record<string, string>;
+};
 
-export type postscaffoldresponse = {
-  projectid: number;
-}
+export type PostScaffoldResponse = {
+  projectId: number;
+};

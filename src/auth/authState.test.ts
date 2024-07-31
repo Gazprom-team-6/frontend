@@ -1,10 +1,10 @@
-import { initialAuthState } from './authState'
+import { initialAuthState } from './authState';
 
 describe('auth/state', () => {
   it('начальное состояние имеет корректные значения', () => {
-    const { isAuthenticated, isLoading } = initialAuthState
+    const { isAuthenticated, isLoading } = initialAuthState;
 
-    expect(isAuthenticated).toBeFalsy()
-    expect(isLoading).toBeTruthy()
-  })
-})
+    expect(isAuthenticated).toBeFalsy();
+    expect(isLoading).toBeTruthy();
+  });
+});

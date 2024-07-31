@@ -1,20 +1,20 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom';
 
-import { useAuth } from '@/auth'
-import { Button } from '@/ui'
-import logo from '@/assets/logo.svg'
+import { useAuth } from '@/auth';
+import { Button } from '@/ui';
+import logo from '@/assets/logo.svg';
 
-import './Auth.style.css'
+import './Auth.style.css';
 
 /**
  * Компонент Auth отображает страницу аутентификации.
  * Начальная точка входа пользователя в приложение.
  */
 export function Auth() {
-  const navigate = useNavigate()
-  const { isAuthenticated, login }
+  const navigate = useNavigate();
+  const { isAuthenticated, login } = useAuth();
 
   React.useEffect(() => {
     console.log(isAuthenticated);
@@ -63,7 +63,6 @@ export function Auth() {
                     type="checkbox"
                     name=""
                     id="check"
-                    checked
                   /><span className="form__checkbox" />Запомнить пароль
                 </label>
                 <Link to="/auth" className="form__link">Забыли пароль?</Link>
@@ -86,7 +85,7 @@ export function Auth() {
         />
         <div className="copyright__block">
           <div className="copyright__icon" />
-          <p className="copyright__text">2022–2024 OOO «Оператор Газпром ИД»</p>
+          <p className="copyright__text">2022-2024 OOO «Оператор Газпром ИД»</p>
         </div>
       </div>
     </div>

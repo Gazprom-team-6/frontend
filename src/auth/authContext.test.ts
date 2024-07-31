@@ -1,11 +1,11 @@
-import { initialContext } from './authContext'
+import { initialContext } from './authContext';
 
 describe('auth/context', () => {
   it('начальное значение контекста имеет корректные значения', () => {
-    const { login, logout } = initialContext
-    const error = /^Компонент находится вне контекста <AuthProvider>.$/
+    const { login, logout } = initialContext;
+    const error = /^Компонент находится вне контекста <AuthProvider>.$/;
 
-    expect(() => login()).toThrowError(error)
-    expect(() => logout()).toThrowError(error)
-  })
-})
+    expect(() => login()).toThrowError(error);
+    expect(() => logout()).toThrowError(error);
+  });
+});

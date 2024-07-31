@@ -1,6 +1,6 @@
-import type { AuthState } from './types'
+import type { AuthState } from './types';
 
 export const initialAuthState: AuthState = {
-  isauthenticated: false,;
-  isloading: true,;
-}
+  isAuthenticated: false,
+  isLoading: true,
+};

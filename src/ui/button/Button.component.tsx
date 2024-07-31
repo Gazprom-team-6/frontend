@@ -1,6 +1,6 @@
-import type { ButtonProps } from './Button.types'
+import type { ButtonProps } from './Button.types';
 
-import './Button.style.css'
+import './Button.style.css';
 
 /**
  * Отображает стандартную кнопку с указанными типом и содержимым.
@@ -12,10 +12,10 @@ import './Button.style.css'
  * @param disabled - Определяет, отключена ли кнопка, по-умолчанию false.
  */
 export function Button({
-onClick,
-children,
-type = 'secondary',
-disabled = false,
+  onClick,
+  children,
+  type = 'secondary',
+  disabled = false,
 }: ButtonProps) {
   return (
     <button
@@ -26,5 +26,5 @@ disabled = false,
     >
       {children}
     </button>
-  )
+  );
 }

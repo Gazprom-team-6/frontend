@@ -1,27 +1,27 @@
-import { renderHook, waitFor } from '@testing-library/react'
+import { renderHook, waitFor } from '@testing-library/react';
 
-import { useProjects } from '@/api'
-import { Wrapper, data } from '@/tests'
+import { useProjects } from '@/api';
+import { Wrapper, data } from '@/tests';
 
 beforeEach(() => {
-  vi.useFakeTimers()
-})
+  vi.useFakeTimers();
+});
 
 afterEach(() => {
-  vi.restoreAllMocks()
-})
+  vi.restoreAllMocks();
+});
 
 describe('useProjects', () => {
   it('возвращает список проектов', async () => {
-    vi.runAllTimersAsync()
+    vi.runAllTimersAsync();
     const { result } = renderHook(
       () => useProjects(),
       { wrapper: Wrapper },
-    )
+    );
 
-    vi.advanceTimersToNextTimer()
-    await waitFor(() => expect(result.current.isSuccess).toBeTruthy())
+    vi.advanceTimersToNextTimer();
+    await waitFor(() => expect(result.current.isSuccess).toBeTruthy());
 
-    expect(result.current.data).toEqual(data.projectList)
-  })
-})
+    expect(result.current.data).toEqual(data.projectList);
+  });
+});

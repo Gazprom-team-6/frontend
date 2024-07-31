@@ -1,6 +1,6 @@
-import type { PageProps } from './Page.types'
+import type { PageProps } from './Page.types';
 
-import './Page.style.css'
+import './Page.style.css';
 
 /**
  * Отображает базовую структуру страницы с заголовком и дочерними элементами.
@@ -11,10 +11,10 @@ import './Page.style.css'
  * @param inner - Флаг, указывающий на вложенность страницы.
  */
 export function Page({
-title,
-extra,
-children,
-inner = false,
+  title,
+  extra,
+  children,
+  inner = false,
 }: PageProps) {
   return (
     <div className={`page${inner ? ' inner' : ''}`}>
@@ -32,5 +32,5 @@ inner = false,
         {children}
       </div>
     </div>
-  )
+  );
 }
