@@ -6,7 +6,7 @@ export function reducer(state: AuthState, action: Action): AuthState {
       return {
         ...state,
         // isAuthenticated: !!action.user,
-        isAuthenticated: true,
+        isAuthenticated: false,
         isLoading: false,
         error: undefined,
         user: action.user,

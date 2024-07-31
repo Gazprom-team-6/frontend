@@ -59,6 +59,17 @@ export const router = createBrowserRouter([
           },
         ],
       },
+      {
+        path: 'forget-password',
+        element: <AuthLayout />,
+        children: [
+          {
+            index: true,
+            element: <Auth />,
+            handle: { crumb: 'Авторизация' },
+          },
+        ],
+      },
     ],
   },
 ]);
