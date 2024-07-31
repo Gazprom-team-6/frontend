@@ -3,12 +3,16 @@ import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
 
+const isProd = process.env.NODE_ENV === 'production';
+const BASE_DEV_PATH = '/';
+const BASE_PROD_PATH = '/frontend/';
+
 export default defineConfig(() => ({
   plugins: [
     react(),
     svgr(),
   ],
-  base: '/',
+  base: isProd ? BASE_PROD_PATH : BASE_DEV_PATH,
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
