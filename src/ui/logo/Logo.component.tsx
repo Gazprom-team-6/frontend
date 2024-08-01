@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
+import LogoHeader from '@/assets/icons/iconHeader.svg?react'
 
 import './Logo.style.css';
-
-// import LogoImage from '@/assets/logo.svg?react';
 
 /**
  * Отображает логотип приложения в виде статичного блока.
@@ -10,7 +9,7 @@ import './Logo.style.css';
 export function Logo() {
   return (
     <Link className="logo" to="/">
-      {/* <LogoImage role="banner" /> */}
+      <LogoHeader role="banner" />
     </Link>
   );
 }

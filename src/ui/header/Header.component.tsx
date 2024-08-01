@@ -1,4 +1,4 @@
-import { Account } from './components';
+import { Account, SearchLine } from './components';
 
 import { Logo } from '@/ui';
 
@@ -11,9 +11,8 @@ export function Header() {
   return (
     <div className="header">
       <Logo />
-      <div className="header-details">
-        <Account />
-      </div>
+      <SearchLine />
+      <Account />
     </div>
   );
 }

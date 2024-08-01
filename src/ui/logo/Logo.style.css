@@ -1,25 +1,19 @@
 .logo {
   align-items: center;
   display: flex;
-  height: 32px;
+  height: 50px;
   justify-content: center;
   margin: 0;
   outline: none;
   text-decoration: none;
-  width: 100px;
+  width: 175px;
 }
 
 .logo img {
   background-color: transparent;
   border: none;
   display: block;
-  height: 32px;
+  height: 50px;
   outline: none;
-  width: 100px;
-}
-
-@media (width < 768px) {
-  .logo {
-    display: none;
-  }
+  width: 175px;
 }
