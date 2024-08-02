@@ -11,10 +11,16 @@
   cursor: pointer;
 }
 
+.notifications:hover .notifications__image {
+  opacity: .7;
+}
+
 .notifications__image {
   width: 32px;
   height: 32px;
   object-fit: contain;
+  opacity: 1;
+  transition: .2s ease-in;
 }
 
 .notifications__quantity {
@@ -31,4 +37,5 @@
   position: absolute;
   top: 4px;
   right: 4px;
+  z-index: 2;
 }

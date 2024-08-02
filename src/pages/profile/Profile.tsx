@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { links } from './constants';
+import more from '@/assets/icons/iconMore.svg';
 
-import { Panel, Page } from '@/ui';
+import { Panel, Page, Checkbox } from '@/ui';
 
 import './Profile.style.css';
 
@@ -10,10 +11,20 @@ import './Profile.style.css';
  */
 export function Profile() {
 
-  const [check, setCheckbox] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const [checkTrainee, setCheckTrainee] = useState(false);
+  const [checkOutsource, setCheckOutsource] = useState(false);
 
-  const handleCheckboxChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    setCheckbox(evt.target.checked);
+  const handleCheckboxTraineeChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    setCheckTrainee(evt.target.checked);
+  };
+
+  const handleCheckboxOutsourceChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    setCheckOutsource(evt.target.checked);
+  };
+
+  const handleButtonClick = (evt: React.MouseEvent<HTMLButtonElement>) => {
+    setIsActive(!isActive);
   };
 
   return (
@@ -21,9 +32,17 @@ export function Profile() {
       <div className="profile-navigate-block">
         <Panel/>
         <div className="profile__info">
-          <p>ID 123456789</p>
-          {/* тут будут тогглы */}
+          <p className="profile__id">ID 123456789</p>
+          <Checkbox type="trainee" onCheck={handleCheckboxTraineeChange} title="Стажёр" checked={checkTrainee} />
+          <Checkbox type="outsource" onCheck={handleCheckboxOutsourceChange} title="Outsource" checked={checkOutsource} />
+          <button className={`profile__button ${isActive ? 'profile__button_current' : ''}`} onClick={handleButtonClick}><img className="profile__button-image" src={more} alt="узнать больше" /></button>
         </div>
+      </div>
+      <div className="profile__block">
+        <div className="profile__block-element"></div>
+        <div className="profile__block-element"></div>
+        <div className="profile__block-element"></div>
+        <div className="profile__block-element"></div>
       </div>
     </Page>
   );

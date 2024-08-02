@@ -10,3 +10,5 @@ export { Page } from './page';
 export { OnlineStatus } from './onlineStatus';
 export { Notifications } from './notifications';
 export { Panel } from './panel';
+export { Checkbox } from './checkbox';
+export { Input } from './input';

@@ -13,21 +13,21 @@ import './Checkbox.style.css';
  */
 export function Checkbox({
   type,
-  onClick,
+  onCheck,
   title,
   checked = false,
 }: ChekboxProps) {
   return (
-    <label className="connect-form__label">
+    <label className="toggle">
       {title}
-      <input className="connect-form__checkbox-hide"
+      <input className="toggle__chechbox"
         type="checkbox"
-        name="agreement"
-        id="agreement"
-        onChange={onClick}
+        id={`chekbox-${type}`}
+        onChange={onCheck}
         required
+        checked={checked}
       />
-      <span className="connect-form__checkbox"></span>
+      <span className="toggle__check"></span>
     </label>
   );
 }
