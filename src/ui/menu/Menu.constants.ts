@@ -1,23 +1,25 @@
 import type { MenuItem } from './Menu.types';
 
-import build from '@/assets/icons/build.svg?react';
-import cloud from '@/assets/icons/cloud.svg?react';
-import settings from '@/assets/icons/settings.svg?react';
+import apartment from '@/assets/icons/iconApartment.svg?react';
+import team from '@/assets/icons/iconTeam.svg?react';
+import project from '@/assets/icons/iconProject.svg?react';
+import fileText from '@/assets/icons/iconFileText.svg?react';
 
 export const items: MenuItem[] = [
   {
-    url: '/',
-    title: 'Главная',
-    icon: build,
+    url: '/organisation-structure',
+    icon: apartment,
   },
   {
-    url: '/services',
-    title: 'Сервисы',
-    icon: cloud,
+    url: '/staff',
+    icon: team,
   },
   {
-    url: '/settings',
-    title: 'Настройки',
-    icon: settings,
+    url: '/all-teams',
+    icon: project,
+  },
+  {
+    url: '/all-components',
+    icon: fileText,
   },
 ];

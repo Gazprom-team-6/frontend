@@ -12,7 +12,7 @@ import {
   ForgetPassword,
   ResetPassword,
   NotFound,
-  Project,
+  Profile,
   Services,
   Settings,
 } from './pages';
@@ -30,23 +30,38 @@ export const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Project />,
-            handle: { crumb: 'Главная' },
-          },
-          {
-            path: 'services',
-            element: <Services />,
-            handle: { crumb: 'Сервисы' },
-          },
-          {
-            path: 'settings',
-            element: <Settings />,
-            handle: { crumb: 'Настройки' },
-          },
-          {
-            path: 'account',
-            element: <Account />,
+            element: <Profile />,
             handle: { crumb: 'Профиль' },
+          },
+          {
+            path: 'teams',
+            element: <Profile />,
+            handle: { crumb: 'Команды' },
+          },
+          {
+            path: 'components',
+            element: <Profile />,
+            handle: { crumb: 'Компоненты' },
+          },
+          {
+            path: 'organisation-structure',
+            element: <Profile />,
+            handle: { crumb: 'Организационная структура' },
+          },
+          {
+            path: 'staff',
+            element: <Profile />,
+            handle: { crumb: 'Сотрудники' },
+          },
+          {
+            path: 'all-teams',
+            element: <Profile />,
+            handle: { crumb: 'Все команды' },
+          },
+          {
+            path: 'all-components',
+            element: <Profile />,
+            handle: { crumb: 'Все компоненты' },
           },
         ],
       },
