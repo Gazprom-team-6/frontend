@@ -8,6 +8,9 @@ import { Button } from '@/ui';
 
 import './ResetPassword.style.css';
 
+import { Typography } from 'antd';
+const { Text } = Typography;
+
 /**
  * Компонент Auth отображает страницу аутентификации.
  * Начальная точка входа пользователя в приложение.
@@ -28,8 +31,8 @@ export function ResetPassword() {
   return (
     <AccessPage title="Восстановление пароля">
       <form className="reset-password__form">
-        <p className="form__text">На Вашу электронную почту <span className="form__text-blue">name@example.com</span> отправлено письмо. 
-        Пожалуйста, откройте его и попробуйте войти ещё раз.</p>
+        <Text style={{ fontFamily: 'Inter', textAlign: 'start' }}>На Вашу электронную почту <span className="form__text-blue">name@example.com</span> отправлено письмо. 
+        Пожалуйста, откройте<br/> его и попробуйте войти ещё раз.</Text>
         <Button
           type="primary"
           onClick={handleButtonClick}
