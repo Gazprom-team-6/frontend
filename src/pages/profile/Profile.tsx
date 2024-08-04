@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { links } from './constants';
 import more from '@/assets/icons/iconMore.svg';
+import avatar from '@/assets/images/Avatar.jpg';
 
 import { Panel, Page, Checkbox } from '@/ui';
 
@@ -39,10 +40,23 @@ export function Profile() {
         </div>
       </div>
       <div className="profile__block">
-        <div className="profile__block-element"></div>
-        <div className="profile__block-element"></div>
-        <div className="profile__block-element"></div>
-        <div className="profile__block-element"></div>
+        <div className="profile__block-element">
+          <div className="profile__admin">Администратор</div>
+          <img className="profile__avatar" src={avatar} alt="аватар" />
+          <input className="profile__avatar-input" type="file" required></input>
+        </div>
+        <div className="profile__block-element">
+          <h3>Общая информация</h3>
+          <div></div>
+        </div>
+        <div className="profile__block-element">
+          <h3>Обо мне</h3>
+          <textarea required />
+        </div>
+        <div className="profile__block-element">
+          <h3>Навыки</h3>
+          <div></div>
+        </div>
       </div>
     </Page>
   );

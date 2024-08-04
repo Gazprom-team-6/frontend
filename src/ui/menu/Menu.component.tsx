@@ -12,7 +12,16 @@ import './Menu.style.css';
  */
 export function Menu() {
   const location = useLocation();
+  const [collapsed, setCollapsed] = React.useState(true);
   const [current, setCurrent] = React.useState(location.pathname);
+
+  const handleMenuClick = () => {
+    setCollapsed(value => !value);
+  }
+
+  const handleClick = (evt: React.MouseEvent<HTMLDivElement>) => {
+    evt.stopPropagation();
+  }
 
   React.useEffect(() => {
     setCurrent(location.pathname);
@@ -20,15 +29,23 @@ export function Menu() {
 
   return (
     <div role="navigation">
-        <div className="menu">
-          {items.map(({ url, icon: Icon }) => (
-            <NavLink
+        <div className={`menu ${collapsed ? 'collapsed' : ''}`} onClick={handleMenuClick}>
+          {items.map(({ url, title, icon: Icon }) => (
+            <div role="button" onClick={handleClick} >
+              <NavLink
               key={url}
               className={`menu__item${isCurrentPage(url, current) ? ' menu__item_current' : ''}`}
               to={url}
             >
-              <Icon />
+              <span className="menu-item-icon"><Icon /></span>
+              <span
+                className="menu-item-text"
+                style={{ width: collapsed ? '0' : '95px' }}
+              >
+                {title}
+              </span>
             </NavLink>
+            </div>
           ))}
         </div>
       </div>
