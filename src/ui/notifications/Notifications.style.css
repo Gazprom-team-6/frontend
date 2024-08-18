@@ -1,10 +1,18 @@
 .notifications {
-  width: 46px;
-  height: 46px;
-  position: relative;
-  padding: 10px 10px 4px 4px;
-  border: none;
   background-color: inherit;
+  border: none;
+  height: 46px;
+  padding: 10px 10px 4px 4px;
+  position: relative;
+  width: 46px;
+}
+
+.notifications__image {
+  height: 32px;
+  object-fit: contain;
+  opacity: 1;
+  transition: .2s ease-in;
+  width: 32px;
 }
 
 .notifications:hover {
@@ -15,27 +23,19 @@
   opacity: .7;
 }
 
-.notifications__image {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  opacity: 1;
-  transition: .2s ease-in;
-}
-
 .notifications__quantity {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
+  background-color: #1677ff;
   border-radius: 10px;
-  color: #FFF;
-  background-color: #1677FF;
+  color: #fff;
+  display: flex;
   font-size: 12px;
   font-weight: 400;
+  height: 20px;
+  justify-content: center;
   position: absolute;
-  top: 4px;
   right: 4px;
+  top: 4px;
+  width: 20px;
   z-index: 2;
 }

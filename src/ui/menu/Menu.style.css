@@ -1,16 +1,16 @@
 .menu {
-  position: fixed;
-  top: 62px;
-  left: 0;
-  background-color: #EBF2FC;
-  width: 181px;
+  background-color: #ebf2fc;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  row-gap: 16px;
-  padding: 24px;
   height: 100%;
+  left: 0;
+  padding: 24px;
+  position: fixed;
+  row-gap: 16px;
+  top: 62px;
   transition: width .15s ease-in-out;
+  width: 181px;
 }
 
 .menu:hover {
@@ -19,13 +19,13 @@
 
 .menu.collapsed {
   background-color: inherit;
-  width: 83px;
   transition: width .15s ease-in-out;
+  width: 83px;
 }
 
 .menu__item {
-  display: flex;
   align-items: center;
+  display: flex;
   text-decoration: none;
   transition-duration: .15s;
   transition-property: background-color, color, padding;
@@ -33,16 +33,20 @@
 }
 
 .menu-item-icon {
-  text-decoration: none;
   align-items: center;
-  justify-content: center;
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 4px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .08), 0 3px 6px -4px rgba(0, 0, 0, .12), 0 9px 28px 8px rgba(0, 0, 0, .05);
   display: flex;
-  padding: 8.5px;
-  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08), 0px 3px 6px -4px rgba(0, 0, 0, 0.12), 0px 9px 28px 8px rgba(0, 0, 0, 0.05);
+  justify-content: center;
   opacity: 1;
+  padding: 8.5px;
+  text-decoration: none;
   transition: .2s ease-in;
+}
+
+.menu__item_current .menu-item-icon {
+  background-color: #1677ff;
 }
 
 .menu__item:hover .menu-item-icon {
@@ -50,31 +54,27 @@
   opacity: .7;
 }
 
+.menu-item-text {
+  color: rgba(0, 0, 0, .88);
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  opacity: 1;
+  overflow: hidden;
+  padding-left: 8px;
+  text-overflow: ellipsis;
+  transition: width .15s ease-in-out;
+  white-space: nowrap;
+}
+
 .menu__item:hover .menu-item-text {
   cursor: pointer;
   opacity: .7;
 }
 
-.menu__item_current .menu-item-icon {
-  background-color: #1677FF;
-}
-
 .menu__item_current .menu-item-icon svg path {
-  fill: #FFF;
-}
-
-.menu-item-text {
-  display: block;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 400;
-  color: rgba(0, 0, 0, .88);
-  padding-left: 8px;
-  opacity: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: width .15s ease-in-out;
-  white-space: nowrap;
+  fill: #fff;
 }
 
 .menu.collapsed .menu-item-text {

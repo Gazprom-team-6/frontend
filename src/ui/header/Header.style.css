@@ -1,70 +1,73 @@
 .header {
   align-items: end;
+  column-gap: 20px;
   display: flex;
   flex: 0 0 auto;
   height: 62px;
   margin: 0 auto;
   padding-left: 24px;
   padding-right: 17px;
-  column-gap: 20px;
 }
 
 .search {
   align-items: center;
-  display: flex;
-  background-color: #FFF;
-  height: 50px;
-  width: 815px;
-  padding: 13px 20px;
-  column-gap: 4px;
-  border: 1px solid #E4E7F3;
+  background-color: #fff;
+  border: 1px solid #e4e7f3;
   border-radius: 12px;
+  column-gap: 4px;
+  display: flex;
+  height: 50px;
+  padding: 13px 20px;
+  width: 815px;
 }
 
 .search__image {
   height: 24px;
-  width: 24px;
   object-fit: contain;
+  width: 24px;
 }
 
 .search__input {
   border: none;
-  width: 100%;
+  color: #1d1d27;
   font-size: 14px;
-  line-height: 22px;
   font-weight: 400;
-  color: #1D1D27;
+  line-height: 22px;
+  width: 100%;
 }
 
 .search__input::placeholder {
-  color: #E4E7F3;
+  color: #e4e7f3;
 }
 
-.search__input:focus, .search__input:active, .search__input:focus-within, .search__input:focus-visible  {
-  outline: none;
+.search__input:focus,
+.search__input:active,
+.search__input:focus-within,
+.search__input:focus-visible  {
   box-shadow: none;
+  outline: none;
 }
 
 .account {
-  width: 369px;
-  height: 50px;
-  background-color: #FFF;
-  border: 1px solid #E4E7F3;
-  border-radius: 12px;
-  padding: 2px 20px;
-  display: flex;
   align-items: center;
+  background-color: #fff;
+  border: 1px solid #e4e7f3;
+  border-radius: 12px;
+  display: flex;
+  height: 50px;
+  padding: 2px 20px;
+  width: 369px;
 }
 
 .account__user {
-  display: flex;
   align-items: center;
   column-gap: 4px;
+  display: flex;
   width: 100%;
 }
 
 .account__name {
-  color: #1D1D27;
+  color: #1d1d27;
   font-size: 14px;
   line-height: 22px;
 }
