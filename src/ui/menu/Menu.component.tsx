@@ -31,9 +31,8 @@ export function Menu() {
     <div role="navigation">
         <div className={`menu ${collapsed ? 'collapsed' : ''}`} onClick={handleMenuClick}>
           {items.map(({ id, url, title, icon: Icon }) => (
-            <div role="button" onClick={handleClick} >
+            <div key={id} role="button" onClick={handleClick} >
               <NavLink
-              key={id}
               className={`menu__item${isCurrentPage(url, current) ? ' menu__item_current' : ''}`}
               to={url}
             >

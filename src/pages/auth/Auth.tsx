@@ -51,7 +51,7 @@ export function Auth() {
           </Space>
           <div className="form__password-block">
             <Checkbox onChange={onChange} style={{ fontFamily: 'Inter', lineHeight: '22px' }}>Запомнить пароль</Checkbox>
-            <Link style={{ fontFamily: 'Inter' }} to="/forget-password" className="form__link"><Text style={{ fontFamily: 'Inter' }} >Забыли пароль?</Text></Link>
+            <Link style={{ fontFamily: 'Inter' }} to="/frontend/forget-password" className="form__link"><Text style={{ fontFamily: 'Inter' }} >Забыли пароль?</Text></Link>
           </div>
         </div>
         <Button
