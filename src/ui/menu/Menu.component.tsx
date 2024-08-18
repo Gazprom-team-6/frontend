@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import { items } from './Menu.constants';
 import { isCurrentPage } from './Menu.utils';
@@ -15,45 +15,39 @@ export function Menu() {
   const [collapsed, setCollapsed] = React.useState(true);
   const [current, setCurrent] = React.useState(location.pathname);
 
+  const handleMenuClick = () => {
+    setCollapsed(value => !value);
+  }
+
+  const handleClick = (evt: React.MouseEvent<HTMLDivElement>) => {
+    evt.stopPropagation();
+  }
+
   React.useEffect(() => {
     setCurrent(location.pathname);
   }, [location]);
 
   return (
-    <div
-      role="navigation"
-      className={`menu${collapsed ? ' collapsed' : ''}`}
-    >
-      <div className="menu-wrapper">
-        <div className="menu-container">
-          {items.map(({ url, title, icon: Icon }) => (
-            <Link
-              key={url}
-              className={`menu-item${isCurrentPage(url, current) ? ' current' : ''}`}
+    <div role="navigation">
+        <div className={`menu ${collapsed ? 'collapsed' : ''}`} onClick={handleMenuClick}>
+          {items.map(({ id, url, title, icon: Icon }) => (
+            <div role="button" onClick={handleClick} >
+              <NavLink
+              key={id}
+              className={`menu__item${isCurrentPage(url, current) ? ' menu__item_current' : ''}`}
               to={url}
             >
               <span className="menu-item-icon"><Icon /></span>
               <span
                 className="menu-item-text"
-                style={{ width: collapsed ? '0' : '129px' }}
+                style={{ width: collapsed ? '0' : '95px' }}
               >
                 {title}
               </span>
-            </Link>
+            </NavLink>
+            </div>
           ))}
         </div>
-        <button
-          type="button"
-          className="menu-trigger"
-          aria-label="Toggle sidebar"
-          onClick={() => setCollapsed(value => !value)}
-        >
-          <span
-            className="menu-trigger-icon"
-            style={{ transform: `rotate(${collapsed ? 45 : 225}deg)` }}
-          />
-        </button>
       </div>
-    </div>
   );
 }

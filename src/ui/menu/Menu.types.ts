@@ -1,6 +1,8 @@
 import type * as React from 'react';
 
 export type MenuItem = {
+
+  id: number;
   /** URL адрес пункта меню. */
   url: string;
 

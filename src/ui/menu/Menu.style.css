@@ -1,88 +1,76 @@
 .menu {
-  background-color: var(--menu-background-color);
-  border-right: 1px solid var(--menu-border-color);
-  transition: width .15s ease-in-out;
-  width: 200px;
-}
-
-.menu.collapsed {
-  width: 81px;
-}
-
-.menu-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  height: 100%;
   position: fixed;
-  top: 0;
-}
-
-.menu-container {
+  top: 62px;
+  left: 0;
+  background-color: #EBF2FC;
+  width: 181px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 4px;
-  padding: 12px 4px;
+  row-gap: 16px;
+  padding: 24px;
+  height: 100%;
+  transition: width .15s ease-in-out;
 }
 
-.menu-item {
-  align-items: center;
-  background-color: var(--menu-item-background-color);
-  border-radius: 8px;
-  color: var(--menu-item-color);
+.menu:hover {
+  cursor: pointer;
+}
+
+.menu.collapsed {
+  background-color: inherit;
+  width: 83px;
+  transition: width .15s ease-in-out;
+}
+
+.menu__item {
   display: flex;
-  height: 40px;
-  padding: 0 20px;
+  align-items: center;
   text-decoration: none;
   transition-duration: .15s;
   transition-property: background-color, color, padding;
   transition-timing-function: ease-in-out;
 }
 
-.menu-item:hover {
-  background-color: var(--menu-item-hover-background-color);
-}
-
-.menu.collapsed .menu-item {
-  padding: 0 28px;
-}
-
-.menu-item.current,
-.menu-item.current:hover {
-  background-color: var(--menu-item-current-background-color);
-  color: var(--menu-item-current-color);
-}
-
 .menu-item-icon {
+  text-decoration: none;
   align-items: center;
-  display: flex;
-  flex-shrink: 0;
-  height: 14px;
   justify-content: center;
-  transition-duration: .15s;
-  transition-property: width, height;
-  transition-timing-function: ease-in-out;
-  width: 14px;
+  background-color: #FFF;
+  border-radius: 4px;
+  display: flex;
+  padding: 8.5px;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08), 0px 3px 6px -4px rgba(0, 0, 0, 0.12), 0px 9px 28px 8px rgba(0, 0, 0, 0.05);
+  opacity: 1;
+  transition: .2s ease-in;
 }
 
-.menu.collapsed .menu-item-icon {
-  height: 16px;
-  width: 16px;
+.menu__item:hover .menu-item-icon {
+  cursor: pointer;
+  opacity: .7;
 }
 
-.menu-item-icon svg {
-  display: block;
-  height: 100%;
-  width: 100%;
+.menu__item:hover .menu-item-text {
+  cursor: pointer;
+  opacity: .7;
+}
+
+.menu__item_current .menu-item-icon {
+  background-color: #1677FF;
+}
+
+.menu__item_current .menu-item-icon svg path {
+  fill: #FFF;
 }
 
 .menu-item-text {
   display: block;
-  flex-grow: 1;
   font-size: 14px;
-  line-height: 20px;
-  margin-left: 8px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, .88);
+  padding-left: 8px;
+  opacity: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   transition: width .15s ease-in-out;
@@ -91,40 +79,4 @@
 
 .menu.collapsed .menu-item-text {
   width: 0;
-}
-
-.menu-trigger {
-  align-items: center;
-  background-color: transparent;
-  border: none;
-  color: var(--app-logo-color);
-  cursor: pointer;
-  display: flex;
-  font-family: inherit;
-  font-size: 20px;
-  font-weight: 400;
-  height: 48px;
-  justify-content: center;
-  line-height: 24px;
-  opacity: .75;
-  outline: none;
-  padding: 0;
-  transition: opacity .15s ease-in-out;
-  width: 100%;
-}
-
-.menu-trigger:hover {
-  opacity: 1;
-}
-
-.menu-trigger:focus {
-  outline: none;
-}
-
-.menu-trigger-icon {
-  border-right: 1.5px solid;
-  border-top: 1.5px solid;
-  color: #000;
-  height: 10px;
-  width: 10px;
 }

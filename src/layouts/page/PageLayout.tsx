@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 import { useAuth } from '@/auth';
-import { Header, Loader } from '@/ui';
+import { Header, Loader, Menu } from '@/ui';
 
 import './PageLayout.style.css';
 
@@ -28,13 +28,12 @@ export function PageLayout() {
       <Loader />
     );
   }
-  // нет меню
 
   return (
     <div className="layout">
-      {/* <Menu /> */}
       <Header />
       <div className="content">
+        <Menu />
         <Outlet />
       </div>
     </div>

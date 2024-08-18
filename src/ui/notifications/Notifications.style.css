@@ -1,0 +1,41 @@
+.notifications {
+  width: 46px;
+  height: 46px;
+  position: relative;
+  padding: 10px 10px 4px 4px;
+  border: none;
+  background-color: inherit;
+}
+
+.notifications:hover {
+  cursor: pointer;
+}
+
+.notifications:hover .notifications__image {
+  opacity: .7;
+}
+
+.notifications__image {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  opacity: 1;
+  transition: .2s ease-in;
+}
+
+.notifications__quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  color: #FFF;
+  background-color: #1677FF;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 2;
+}

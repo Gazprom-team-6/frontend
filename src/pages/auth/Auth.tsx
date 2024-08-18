@@ -8,6 +8,11 @@ import { Button } from '@/ui';
 
 import './Auth.style.css';
 
+import { Checkbox, Input, Space, Form, Typography } from 'antd';
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+import type { CheckboxProps } from 'antd';
+const { Text } = Typography;
+
 /**
  * Компонент Auth отображает страницу аутентификации.
  * Начальная точка входа пользователя в приложение.
@@ -23,48 +28,30 @@ export function Auth() {
     }
   }, [isAuthenticated, navigate]);
 
+  const onChange: CheckboxProps['onChange'] = (e) => {
+    console.log(`checked = ${e.target.checked}`);
+  };
+
   return (
     <AccessPage title="Добро пожаловать">
-      <form className="auth__form">
+      <Form className="auth__form">
         <div className="form__inputs">
-          <div className="form__input-wrapper">
-            <input
-              type="email"
-              placeholder="E-mail"
-              // value={email}
-              // onChange={e => setEmail(e.target.value)}
-              className="form__input"
-              required
-            />
-            <div className="form__text-error">Укажите, пожалуйста, ваш email корректно</div>
-          </div>
-          <div className="form__input-wrapper">
-            <input
-              type="password"
-              placeholder="Пароль"
-              // value={password}
-              // onChange={e => setPassword(e.target.value)}
-              className="form__input"
-              required
-            />
-            <button
-              className="form__input-control"
-              type="button"
-              title="Показать пароль"
-              aria-label="Показать пароль"
-            />
-            <div className="form__text-error">Введите пароль</div>
-            <div className="form__password-block">
-              <label className="form__check">
-                <input
-                  className="form__checkbox-hide"
-                  type="checkbox"
-                  name=""
-                  id="check"
-                /><span className="form__checkbox" />Запомнить пароль
-              </label>
-              <Link to="/forget-password" className="form__link">Забыли пароль?</Link>
-            </div>
+          <Space direction="vertical" style={{ rowGap: '0' }}>
+            <Form.Item style={{ textAlign: 'start', marginBottom: '0' }}>
+              <Input placeholder="E-mail" style={{ fontFamily: 'Inter', padding: '9px 12px', borderRadius: '8px' }} />
+            </Form.Item>
+            <Form.Item style={{ textAlign: 'start', marginBottom: '0', marginTop: '16px' }}>
+              <Input.Password
+                className="auth__password"
+                placeholder="Пароль"
+                style={{ padding: '9px 12px', borderRadius: '8px' }}
+                iconRender={(visible) => (visible ? <EyeTwoTone style={{height: '16px', width: '16px', backgroundPosition: 'contain'}} /> : <EyeInvisibleOutlined style={{height: '16px', width: '16px'}} />)}
+              />
+            </Form.Item>
+          </Space>
+          <div className="form__password-block">
+            <Checkbox onChange={onChange} style={{ fontFamily: 'Inter', lineHeight: '22px' }}>Запомнить пароль</Checkbox>
+            <Link style={{ fontFamily: 'Inter' }} to="/forget-password" className="form__link"><Text style={{ fontFamily: 'Inter' }} >Забыли пароль?</Text></Link>
           </div>
         </div>
         <Button
@@ -73,7 +60,7 @@ export function Auth() {
         >
           Войти
         </Button>
-      </form>
+      </Form>
     </AccessPage>
   );
 }

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export type PageProps = {
   /** Заголовок страницы */
-  title: string;
+  title?: string;
 
   /** Дополнительная область в правом верхнем углу страницы */
   extra?: React.ReactNode;

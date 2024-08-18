@@ -18,7 +18,8 @@ export function Page({
 }: PageProps) {
   return (
     <div className={`page${inner ? ' inner' : ''}`}>
-      <div className="page-header">
+      {title && (
+        <div className="page-header">      
         <div className="page-title">
           {title}
         </div>
@@ -28,6 +29,7 @@ export function Page({
           </div>
         )}
       </div>
+      )}
       <div className="page-content">
         {children}
       </div>

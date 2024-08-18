@@ -4,6 +4,9 @@ import copyright from '@/assets/icons/iconCopyright.svg'
 
 import './AccessPage.style.css';
 
+import { Typography } from 'antd';
+const { Title, Text } = Typography;
+
 /**
  * Отображает базовую структуру страницы с заголовком и дочерними элементами.
  *
@@ -16,7 +19,7 @@ export function AccessPage({
   return (
     <div className="access-page">
       <div className="access-page__block">
-        <h1 className="access-page__title">{title}</h1>
+        <Title level={4} style={{ fontFamily: 'Inter', fontWeight: '600', margin: '0' }}>{title}</Title>
         {children}
       </div>
       <div className="copyright">
@@ -30,7 +33,7 @@ export function AccessPage({
             src={copyright}
             alt="копирайт"
           />
-          <p className="copyright__text">2022-2024 OOO «Оператор Газпром ИД»</p>
+          <Text type="secondary" style={{fontFamily: 'Inter'}}>2022-2024 OOO «Оператор Газпром ИД»</Text>
         </div>
       </div>
     </div>

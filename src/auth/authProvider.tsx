@@ -28,7 +28,7 @@ export function AuthProvider({
         id: 1,
         username: 'user',
         email: 'user@example.com',
-        fullname: 'Пользователь',
+        fullname: 'Светлана Иванова',
       },
     });
   }, []);

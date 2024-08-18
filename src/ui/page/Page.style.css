@@ -1,9 +1,9 @@
 .page {
   display: flex;
   flex-direction: column;
-  gap: 26px;
-  padding: 26px 42px;
+  padding: 24px 25px 0 0;
   width: 100%;
+  row-gap: 20px;
 }
 
 .page.inner {
@@ -13,17 +13,16 @@
 .page-header {
   align-items: start;
   display: flex;
-  flex-direction: row;
-  gap: 8px;
+  padding: 10px 0;
   justify-content: space-between;
   width: 100%;
 }
 
 .page-title {
   flex-grow: 1;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 32px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
   margin: 0;
 }
 
@@ -41,11 +40,8 @@
 }
 
 .page-content {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
-}
-
-@media (width < 992px) {
-  .page {
-    padding: 20px 24px 24px;
-  }
+  row-gap: 20px;
 }
