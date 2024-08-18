@@ -7,21 +7,25 @@ import fileText from '@/assets/icons/iconFileText.svg?react';
 
 export const items: MenuItem[] = [
   {
+    id: 1,
     url: '/organisation-structure',
     title: 'Структура',
     icon: apartment,
   },
   {
+    id: 2,
     url: '/staff',
     title: 'Сотрудники',
     icon: team,
   },
   {
+    id: 3,
     url: '/all-teams',
     title: 'Команды',
     icon: project,
   },
   {
+    id: 4,
     url: '/all-components',
     title: 'Компоненты',
     icon: fileText,

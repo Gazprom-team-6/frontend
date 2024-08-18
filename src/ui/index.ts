@@ -12,3 +12,5 @@ export { Notifications } from './notifications';
 export { Panel } from './panel';
 export { Checkbox } from './checkbox';
 export { Input } from './input';
+export { Tags } from './tags';
+export { UploadAvatar } from './uploadAvatar';

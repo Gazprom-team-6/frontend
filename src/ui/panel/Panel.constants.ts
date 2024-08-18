@@ -3,7 +3,7 @@ import type { PanelItem } from './Panel.types';
 export const items: PanelItem[] = [
   {
     url: '/',
-    title: 'Иформация',
+    title: 'Информация',
   },
   {
     url: '/teams',

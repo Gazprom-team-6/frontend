@@ -56,4 +56,25 @@
 .profile__block-element {
   background-color: #FFF;
   border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.profile__info-fields {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+
+.profile__info-column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.profile__block-element_avatar {
+  align-items: center;
+  justify-content: center;
 }

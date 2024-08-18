@@ -37,10 +37,10 @@ export function Auth() {
       <Form className="auth__form">
         <div className="form__inputs">
           <Space direction="vertical" style={{ rowGap: '0' }}>
-            <Form.Item help="Укажите, пожалуйста, ваш email корректно" validateStatus="error" style={{ textAlign: 'start', marginBottom: '0' }}>
+            <Form.Item style={{ textAlign: 'start', marginBottom: '0' }}>
               <Input placeholder="E-mail" style={{ fontFamily: 'Inter', padding: '9px 12px', borderRadius: '8px' }} />
             </Form.Item>
-            <Form.Item help="Неверный пароль. Попробуйте ввести ещё раз" validateStatus="error" style={{ textAlign: 'start', marginBottom: '0', marginTop: '16px' }}>
+            <Form.Item style={{ textAlign: 'start', marginBottom: '0', marginTop: '16px' }}>
               <Input.Password
                 className="auth__password"
                 placeholder="Пароль"

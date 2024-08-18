@@ -36,7 +36,7 @@ export function ForgetPassword() {
       <Form className="forget-password__form">
         <div className="form__inputs form__inputs_forget-password">
           <Text style={{ fontFamily: 'Inter', textAlign: 'start' }}>Введите ваш адрес электронной почты, который<br/> вы использовали при регистрации.</Text>
-          <Form.Item help="Укажите, пожалуйста, ваш email корректно" validateStatus="error" style={{ textAlign: 'start', marginBottom: '0' }}>
+          <Form.Item style={{ textAlign: 'start', marginBottom: '0' }}>
             <Input placeholder="E-mail" style={{ fontFamily: 'Inter', padding: '9px 12px', borderRadius: '8px' }} />
           </Form.Item>
           <Text style={{ fontFamily: 'Inter', textAlign: 'start' }}>На указанный адрес электронной почты будет отправлено письмо для восстановления пароля.</Text>
