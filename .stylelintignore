@@ -1,2 +1,4 @@
 *.test.tsx
 *.test.ts
+*.tsx
+*.ts

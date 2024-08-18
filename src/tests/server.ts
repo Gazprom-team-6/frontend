@@ -6,7 +6,7 @@ import { data } from '@/tests';
 export const server = setupServer(
   http.get(
     `${apiUrl}/auth/link`,
-    () => HttpResponse.json({ auth_url: 'http://localhost:3000' })
+    () => HttpResponse.json({ auth_url: 'http://localhost:3000/frontend' })
   ),
   http.post(
     `${apiUrl}/auth/exchange`,

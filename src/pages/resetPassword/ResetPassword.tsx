@@ -17,16 +17,16 @@ const { Text } = Typography;
  */
 export function ResetPassword() {
   const navigate = useNavigate();
-  const { isAuthenticated, login } = useAuth();
+  const { isAuthenticated } = useAuth();
 
   React.useEffect(() => {
     console.log(isAuthenticated);
     if (isAuthenticated) {
-      navigate('/', { replace: true });
+      navigate('/frontend', { replace: true });
     }
   }, [isAuthenticated, navigate]);
 
-  const handleButtonClick = () => navigate("/auth");
+  const handleButtonClick = () => navigate("/frontend/auth");
 
   return (
     <AccessPage title="Восстановление пароля">

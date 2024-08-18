@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { links } from './constants';
+import { useState } from 'react';
 import more from '@/assets/icons/iconMore.svg';
 import avatar from '@/assets/images/Avatar.jpg';
 import { Panel, Page, Tags, UploadAvatar } from '@/ui';
@@ -28,7 +27,7 @@ export function Profile() {
     setCheckOutsource(checked);
   };
 
-  const handleButtonClick = (evt: React.MouseEvent<HTMLButtonElement>) => {
+  const handleButtonClick = () => {
     setIsActive(!isActive);
   };
 

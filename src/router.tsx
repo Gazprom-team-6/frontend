@@ -7,24 +7,21 @@ import {
 } from './layouts';
 
 import {
-  Account,
   Auth,
   ForgetPassword,
   ResetPassword,
   NotFound,
   Profile,
-  Services,
-  Settings,
 } from './pages';
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/frontend',
     element: <RootLayout />,
     errorElement: <NotFound />,
     children: [
       {
-        path: '/',
+        path: '/frontend',
         element: <PageLayout />,
         handle: { crumb: 'Проект' },
         children: [

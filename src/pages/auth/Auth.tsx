@@ -24,7 +24,7 @@ export function Auth() {
   React.useEffect(() => {
     console.log(isAuthenticated);
     if (isAuthenticated) {
-      navigate('/', { replace: true });
+      navigate('/frontend', { replace: true });
     }
   }, [isAuthenticated, navigate]);
 
