@@ -52,7 +52,7 @@ export function Profile() {
   const StyledFormItem = styled(Form.Item)`
   .ant-form-item-row {
     flex-wrap: nowrap;
-    margin: 0;
+    margin: 0 !important;
     align-items: center;
   }
 
@@ -69,7 +69,7 @@ export function Profile() {
   }
 
   :where(.css-dev-only-do-not-override-1uq9j6g).ant-form-item {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 `;
 
@@ -112,7 +112,7 @@ const StyledFormImage = styled(Image)`
 
   return (
     <Page title="Личный кабинет сотрудника">
-      <div className="profile-navigate-block">
+      <form className="profile-navigate-block">
         <Panel/>
         <div className="profile__info">
           <p className="profile__id">ID 123456789</p>
@@ -139,7 +139,7 @@ const StyledFormImage = styled(Image)`
               />
           </button>
         </div>
-      </div>
+      </form>
       <Form layout="vertical" className="profile__block">
         <div className="profile__block-element profile__block-element_avatar">
           <Tag color="blue" style={{ position: 'absolute', top: '8px', left: '12px' }}>Администратор</Tag>

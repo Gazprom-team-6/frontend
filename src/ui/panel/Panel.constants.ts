@@ -2,15 +2,15 @@ import type { PanelItem } from './Panel.types';
 
 export const items: PanelItem[] = [
   {
-    url: '/',
+    url: '/frontend',
     title: 'Информация',
   },
   {
-    url: '/teams',
+    url: '/frontend/teams',
     title: 'Команды',
   },
   {
-    url: '/components',
+    url: '/frontend/components',
     title: 'Компоненты',
   },
 ];

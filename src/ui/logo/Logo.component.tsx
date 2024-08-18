@@ -8,7 +8,7 @@ import './Logo.style.css';
  */
 export function Logo() {
   return (
-    <Link className="logo" to="/">
+    <Link className="logo" to="/frontend">
       <LogoHeader role="banner" />
     </Link>
   );
