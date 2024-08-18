@@ -1,7 +1,7 @@
 import React from 'react';
 import { CameraOutlined } from '@ant-design/icons';
 import type { UploadProps } from 'antd';
-import { Button, Flex, message, Upload } from 'antd';
+import { Button, message, Upload } from 'antd';
 import styled from '@emotion/styled';
 
 const StyledUploadBlock = styled(Upload)`

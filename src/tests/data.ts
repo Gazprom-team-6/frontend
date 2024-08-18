@@ -1,7 +1,7 @@
 import type { GetProjectList } from '@/api';
 import type { User } from '@/auth/types';
 
-export const auth_url = 'http://localhost:3000/';
+export const auth_url = 'http://localhost:3000/frontend/';
 
 export const token = '71398166-d45f-48a8-a5e5-d2e302c69be4';
 

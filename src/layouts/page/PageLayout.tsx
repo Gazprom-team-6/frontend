@@ -19,7 +19,7 @@ export function PageLayout() {
 
   React.useEffect(() => {
     if (!isAuthenticated && !isLoading) {
-      navigate('/auth');
+      navigate('/frontend/auth');
     }
   }, [isAuthenticated, isLoading, navigate]);
 

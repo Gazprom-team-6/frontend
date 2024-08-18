@@ -17,18 +17,18 @@ const { Text } = Typography;
  */
 export function ForgetPassword() {
   const navigate = useNavigate();
-  const { isAuthenticated, login } = useAuth();
+  const { isAuthenticated } = useAuth();
 
   React.useEffect(() => {
     console.log(isAuthenticated);
     if (isAuthenticated) {
-      navigate('/', { replace: true });
+      navigate('/frontend', { replace: true });
     }
   }, [isAuthenticated, navigate]);
 
   const handleButtonClick = () => {
     // тут запрос для отправки на почту ссылки на смену пароля
-    navigate("/reset-password");
+    navigate("/frontend/reset-password");
   }
 
   return (

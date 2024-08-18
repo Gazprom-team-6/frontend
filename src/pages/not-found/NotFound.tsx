@@ -14,7 +14,7 @@ export function NotFound() {
   const [count, setCount] = React.useState(20);
   const navigate = useNavigate();
   const handleNavigate = () => {
-    navigate('/auth', { replace: true });
+    navigate('/frontend/auth', { replace: true });
   };
 
   React.useEffect(() => {

@@ -40,7 +40,7 @@ export function AuthProvider({
   const logout = React.useCallback(() => {
     window.localStorage.removeItem('token');
     dispatch({ type: 'LOGOUT' });
-    navigate('/auth', { replace: true });
+    navigate('/frontend/auth', { replace: true });
   }, [navigate]);
 
   React.useEffect(() => {
