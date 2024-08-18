@@ -1,24 +1,24 @@
 .avatar {
+  height: 32px;
   position: relative;
   width: 32px;
-  height: 32px;
 }
 
 .avatar__image {
-  width: 100%;
+  border-radius: 16px;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 16px;
+  width: 100%;
 }
 
 .avatar__status {
-  width: 10px;
-  height: 10px;
-  background-color: #52C41A;
-  border: 2px solid #FFF;
+  background-color: #52c41a;
+  border: 2px solid #fff;
   border-radius: 5px;
+  height: 10px;
   position: absolute;
-  top: -2px;
   right: -2px;
+  top: -2px;
+  width: 10px;
 }

@@ -1,15 +1,15 @@
 .profile-navigate-block {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   height: 46px;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .profile__info {
-  display: flex;
   align-items: center;
-  padding: 9px 0;
   column-gap: 12px;
+  display: flex;
+  padding: 9px 0;
   text-wrap: nowrap;
 }
 
@@ -18,32 +18,32 @@
 }
 
 .profile__button {
+  background-color: #fff;
   border: none;
-  background-color: #FFF;
   border-radius: 4px;
-  padding: 11px;
   max-height: 40px;
   opacity: 1;
+  padding: 11px;
   transition: .2s ease-in;
 }
 
 .profile__button:hover {
-  opacity: .7;
   cursor: pointer;
+  opacity: .7;
 }
 
 .profile__button_current {
-  background-color: #1677FF;
+  background-color: #1677ff;
 }
 
 .profile__button_current svg path {
-  fill: #FFF;
+  fill: #fff;
 }
 
 .profile__button-image {
-  width: 18px;
   height: 18px;
   object-fit: cover;
+  width: 18px;
 }
 
 .profile__block {
@@ -54,18 +54,18 @@
 }
 
 .profile__block-element {
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 8px;
-  padding: 20px;
   display: flex;
   flex-direction: column;
+  padding: 20px;
   position: relative;
 }
 
 .profile__info-fields {
+  column-gap: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 20px;
 }
 
 .profile__info-column {
